@@ -121,8 +121,7 @@ def get_dataloaders(config: TrainConfig):
     # 初始化数据集
     dataset_config = DatasetConfig(
         ndct_dir=config.ndct_dir,
-        ldct_dir=config.ldct_dir,
-        wavelet_base=config.wavelet_base
+        ldct_dir=config.ldct_dir
     )
     full_dataset = AAPMDenoisingDataset(dataset_config)
 
@@ -137,7 +136,7 @@ def get_dataloaders(config: TrainConfig):
     # 构建DataLoader
     train_loader = DataLoader(
         train_dataset, batch_size=config.batch_size, shuffle=True,
-        num_workers=4, pin_memory=True  # num_workers根据CPU核心数调整
+        num_workers=8, pin_memory=True,prefetch_factor=2  # num_workers根据CPU核心数调整
     )
     val_loader = DataLoader(
         val_dataset, batch_size=config.batch_size, shuffle=False,
