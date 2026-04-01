@@ -16,8 +16,8 @@ notebooks/
 
 # 忽略 .codeartsdoer 配置文件夹
 .codeartsdoer/
-.codeartsdoer/complex_code_task
-.codeartsdoer/skills
+/.codeartsdoer/complex_code_task/
+/.codeartsdoer/skills/
 
 # 忽略本地配置文件 (如果有的话，防止覆盖别人的配置)
 # configs/local_*.yaml
@@ -57,3 +57,4 @@ Pipfile.lock
 # Windows / Mac 缓存
 Thumbs.db
 .DS_Store
+
