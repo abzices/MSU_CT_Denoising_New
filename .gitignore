@@ -4,13 +4,18 @@
 # 忽略原始数据和处理过的数据
 data/raw/
 data/Processed/
-# 如果你想保留 data 下的空文件夹结构，可以在 raw 和 Processed 里面各建一个空的 .gitkeep 文件，并取消下面两行的注释：
 # !data/raw/.gitkeep
 # !data/Processed/.gitkeep
 
 # 忽略模型权重文件 (通常是 .h5, .pth, .pt, .onnx 等，文件很大)
-weights/*
+weights/
+models/
+runs/
+notebooks/
 # !weights/.gitkeep
+
+# 忽略 .codeartsdoer 配置文件夹
+.codeartsdoer/
 
 # 忽略本地配置文件 (如果有的话，防止覆盖别人的配置)
 # configs/local_*.yaml
@@ -34,7 +39,7 @@ Pipfile.lock
 .ipynb_checkpoints/
 
 # =========================
-# MATLAB 基础忽略 (你有 .m 文件)
+# MATLAB 基础忽略
 # =========================
 *.asv
 *.mat
