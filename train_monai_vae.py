@@ -64,11 +64,18 @@ def train_dwt_vae():
         pbar = tqdm(dataloader, desc=f"Epoch {epoch+1}/{epochs}")
 
         for batch in pbar:
+            # dataset返回: (ldct_tensor, ndct_tensor, filename)
             ldct, ndct, _ = batch
-            x = torch.cat([ndct, ldct], dim=0).to(device)
+            # 将数据移至设备
+            ldct = ldct.to(device)
+            ndct = ndct.to(device)
+            # 拼接NDCT和LDCT作为输入
+            x = torch.cat([ndct, ldct], dim=0)
 
             optimizer.zero_grad()
+            # VAE前向传播
             recon, z_mu, z_sigma = vae(x)
+            # 计算损失
             loss, recon_loss, kl_loss = criterion(recon, x, z_mu, z_sigma)
 
             loss.backward()
