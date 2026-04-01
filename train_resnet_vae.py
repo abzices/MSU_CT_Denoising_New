@@ -10,7 +10,7 @@ from torch.utils.tensorboard import SummaryWriter
 import torchvision.utils as vutils
 
 # 导入你定义的模型和数据集
-from src.models.resnet_fromzero import ResNet50Autoencoder, ResNet18Autoencoder
+from src.self_models.resnet_fromzero import ResNet50Autoencoder, ResNet18Autoencoder
 from dataset import AAPMDenoisingDataset, Config as DatasetConfig
 
 

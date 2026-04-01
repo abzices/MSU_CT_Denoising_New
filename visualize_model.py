@@ -2,7 +2,7 @@
 ResNet VAE 模型架构可视化脚本
 """
 import torch
-from src.models.resnet_fromzero import ResNet50Autoencoder, ResNet18Autoencoder
+from src.self_models.resnet_fromzero import ResNet50Autoencoder, ResNet18Autoencoder
 
 
 def print_model_info(model, model_name):
